@@ -1,0 +1,21 @@
+---
+import Layout from '../layouts/Layout.astro';
+import BlogPost from '../components/BlogPost.vue';
+
+const posts = await Astro.glob('./blog/*.md');
+---
+
+<Layout title="Freelancer Blog - All Posts">
+  <h1 class="text-4xl font-bold mb-8">All Blog Posts</h1>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    {posts.map((post) => (
+      <BlogPost
+        client:load
+        title={post.frontmatter.title}
+        description={post.frontmatter.description}
+        date={post.frontmatter.date}
+        url={post.url}
+      />
+    ))}
+  </div>
+</Layout>

@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Helvetica', 'Arial', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply font-bold mb-4;
+}
+
+h1 {
+  @apply text-4xl;
+}
+
+h2 {
+  @apply text-3xl;
+}
+
+h3 {
+  @apply text-2xl;
+}
+
+a {
+  @apply text-neo-blue hover:underline;
+}
+
+.neo-brutalism {
+  @apply border-4 border-black shadow-[8px_8px_0_0_#000];
+}
